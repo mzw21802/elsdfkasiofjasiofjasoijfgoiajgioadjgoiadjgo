@@ -1,0 +1,52 @@
+SpecialMiniWindow
+
+  id: playerBarsWindow
+  height: 30
+  @onClose: modules.game_inventory.onMiniWindowClose()
+  &save: true
+  &notMinimize: true
+
+  MiniWindowContents
+
+  ButtonBox
+    id: SkillsButton
+    text: Skills
+    size: 34 20
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin: 5 6
+    @onCheckChange: modules.game_skills.toggle()
+
+  ButtonBox
+    id: BattleButton
+    anchors.left: SkillsButton.right
+    anchors.top: SkillsButton.top
+    margin-left: 4
+    text: Battle
+    size: 34 20
+    @onCheckChange: modules.game_battle.toggle()
+
+  ButtonBox
+    id: VipButton
+    anchors.left: BattleButton.right
+    anchors.top: BattleButton.top
+    margin-left: 4
+    text: Vip
+    size: 34 20
+    @onCheckChange: modules.game_viplist.toggle()
+
+  ButtonBox
+    id: MiniMapButton
+    anchors.left: VipButton.right
+    anchors.top: VipButton.top
+    margin-left: 5
+    text: Mini Map
+    size: 54 20
+    @onCheckChange: modules.game_minimap.toggle()
+
+
+
+
+
+
+
