@@ -1,0 +1,16 @@
+Module
+  name: client_entergame
+  description: Manages enter game and character list windows
+  author: edubart
+  website: www.elveraonline.com
+
+  @onLoad: |
+    dofile 'entergame'
+    dofile 'characterlist'
+    EnterGame.init()
+    CharacterList.init()
+    EnterGame.setUniqueServer("54.37.226.102", 7171, 772)
+
+  @onUnload: |
+    EnterGame.terminate()
+    CharacterList.terminate()

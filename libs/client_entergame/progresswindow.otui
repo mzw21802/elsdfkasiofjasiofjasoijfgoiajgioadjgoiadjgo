@@ -1,0 +1,61 @@
+MainWindow
+  id: waitingWindow
+  !text: tr('Update Manager')
+  size: 260 140
+
+  Label
+    id: infoLabel
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    text-wrap: true
+    @onSetup: |
+      self:setText("Connecting to the server please wait.")
+
+  ProgressBar
+    id: progressBar
+    height: 15
+    image-border: 2
+    background-color: #4444ff
+    anchors.bottom: next.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    margin-bottom: 10
+    @onSetup: self:setPercent(0)
+
+  HorizontalSeparator
+    id: separator
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: 10
+
+  Button
+    id: restartButton
+    !text: tr('Restart!')
+    width: 64
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    @onClick: onRestartClient()
+    @onSetup: |
+      self:hide()
+
+  Label
+    id: percentLabel
+    text-align: center
+    anchors.bottom: progressBar.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    text-wrap: true
+    @onSetup: |
+      self:setText("0%")
+
+  Label
+    id: timeLabel
+    anchors.top: infoLabel.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    margin-top: 5
+    text-wrap: true
+    @onSetup: |
+      self:setText("Time remaining (?) seconds")

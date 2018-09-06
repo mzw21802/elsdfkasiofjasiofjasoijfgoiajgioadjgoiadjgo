@@ -1,0 +1,9 @@
+Module
+  name: client_background
+  description: Handles the background of the login screen
+  author: edubart
+  website: www.elveraonline.com
+  sandboxed: true
+  scripts: [ background ]
+  @onLoad: init()
+  @onUnload: terminate()
