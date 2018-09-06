@@ -1,0 +1,32 @@
+VipListLabel < GameLabel
+  margin-top: 2
+  text-offset: 16 0
+  image-rect: 0 0 12 12
+  image-clip: 0 0 12 12
+  image-source: /images/game/viplist/icons
+  font: verdana-11px-antialised
+  phantom: false
+
+  $first:
+    margin-top: 0
+
+MiniWindow
+  id: vipWindow
+  !text: tr('VIP')
+  color: #8F8F8F
+  height: 100
+  icon: /images/topbuttons/viplist
+  @onClose: modules.game_viplist.onMiniWindowClose()
+  &save: true
+
+  MiniWindowContents
+    layout: verticalBox
+    padding-left: 5
+    padding-right: 5
+    &onMousePress: modules.game_viplist.onVipListMousePress
+
+  MiniBroder
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    margin-bottom: 2
+    margin-left: 2
