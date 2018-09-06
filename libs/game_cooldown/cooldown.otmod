@@ -1,0 +1,9 @@
+Module
+  name: game_cooldown
+  description: Spellcooldowns
+  author: ElveraOnline team
+  website: www.elveraonline.com
+  sandboxed: true
+  scripts: [ cooldown ]
+  @onLoad: init()
+  @onUnload: terminate()

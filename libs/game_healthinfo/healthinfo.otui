@@ -1,0 +1,85 @@
+HealthBar < ProgressBar
+  id: healthBar
+  image-source: /images/ui/progressbarhpmana
+  background-color: #CB423B
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin-left: 21
+  margin-top: 2
+
+ManaBar < ProgressBar
+  id: manaBar
+  image-source: /images/ui/progressbarhpmana
+  background-color: #7260FF
+  anchors.top: prev.bottom
+  anchors.left: parent.left
+  margin-left: 20
+  margin-top: 3
+
+ExperienceBar < ProgressBar
+  id: experienceBar
+  image-source: /images/ui/progressbarhpmana
+  background-color: #B6E866
+  anchors.top: prev.bottom
+  anchors.left: parent.left
+  margin-left: 20
+  margin-top: 3
+
+HealthLabel < GameLabel
+  id: healthLabel
+  color: #AFAFAF
+  font: verdana-11px-antialised
+  text-offset: 140 0
+  anchors.right: parent.right
+  anchors.left: parent.left
+  anchors.top: healthBar.top
+  anchors.bottom: healthBar.bottom
+  margin-top: -2
+  margin-left: -20
+
+ManaLabel < GameLabel
+  id: manaLabel
+  color: #AFAFAF
+  font: verdana-11px-antialised
+  text-offset: 140 0
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.top: manaBar.top
+  anchors.bottom: manaBar.bottom
+  margin-top: -2
+  margin-left: -20
+
+ExpLabel < GameLabel
+  id: expLabel
+  color: #AFAFAF
+  font: verdana-11px-antialised
+  text-offset: 140 0
+  anchors.right: parent.right
+  anchors.left: parent.left
+  anchors.top: experienceBar.top
+  anchors.bottom: experienceBar.bottom
+  margin-top: -2
+  margin-left: -20
+
+SpecialMiniWindow
+
+  id: healthInfoWindow
+  height: 50
+  @onClose: modules.game_healthinfo.onMiniWindowClose()
+  &save: true
+  &notMinimize: true
+
+  MiniWindowContents
+
+    HealthBar
+    ManaBar
+    HealthLabel
+    ManaLabel
+    ExperienceBar
+    ExpLabel
+
+    ProgressIcons
+      anchors.top: parent.top
+      anchors.left: manaBar.left
+      margin-left: -17
+      margin-top: 3

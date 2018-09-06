@@ -1,0 +1,13 @@
+SpecialMiniWindow
+  id: minimapWindow
+  height: 150
+  &save: true
+  @onClose: modules.game_minimap.onMiniWindowClose()
+  &notMinimize: true
+  &save: true
+
+
+  MiniWindowContents
+    Minimap
+      id: minimap
+      anchors.fill: parent
