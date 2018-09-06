@@ -1,0 +1,199 @@
+window-size: 600 480
+window-pos: 660 300
+window-maximized: true
+uuid: K4TZKLOGrNkMSQa5EkRwitqYpxM=
+displayHealth: true
+showPing: false
+backgroundFrameRate: 201
+showLeftPanel: false
+foregroundFrameRate: 61
+dontStretchShrink: false
+classicControl: true
+displayText: true
+displayNames: true
+showLevelsInConsole: true
+enableLights: true
+showFps: false
+showEventMessagesInConsole: true
+ambientLight: 25
+dashWalk: false
+painterEngine: 0
+showStatusMessagesInConsole: true
+vsync: false
+autoChaseOverride: true
+showTimestampsInConsole: true
+smartWalk: false
+fullscreen: false
+showPrivateMessagesOnScreen: true
+showInfoMessagesInConsole: true
+showPrivateMessagesInConsole: true
+report-uuid: e19f4a32-4dee-4ecd-b53b-9a0d429c69c7
+host: nrtn.pl
+port: 7171
+client-version: 854
+VipList:
+  VipInfo:
+UseIgnoreList: false
+UseWhiteList: false
+IgnorePrivateMessages: false
+IgnoreYelling: false
+motd: 2
+last-used-character: Desew
+last-used-world: Offline
+game_hotkeys:
+  elveraonline.com:
+    GM Fluppix:
+      F4:
+        autoSend: false
+        value:
+      F9:
+        autoSend: false
+        value:
+      Shift+F4:
+        autoSend: false
+        value:
+      Shift+F1:
+        autoSend: false
+        value:
+      F5:
+        autoSend: false
+        value:
+      F11:
+        autoSend: false
+        value:
+      Shift+F3:
+        autoSend: false
+        value:
+      F6:
+        autoSend: false
+        value:
+      Shift+F2:
+        autoSend: false
+        value:
+      F12:
+        autoSend: false
+        value:
+      F2:
+        autoSend: false
+        value:
+      F10:
+        autoSend: false
+        value:
+      F1:
+        autoSend: false
+        value:
+      F8:
+        autoSend: false
+        value:
+      F3:
+        autoSend: false
+        value:
+      F7:
+        autoSend: false
+        value:
+LastPlayerBars:
+  GM Fluppix:
+    checkMiniMap: 1
+    checkSkill: 1
+  Desew:
+    checkVip: 1
+  Adric:
+    checkVip: 1
+    checkSkill: 1
+Minimap:
+  zoom: 0
+  flags:
+lastChannelsOpen:
+  Adric:
+    Help: 7
+    Trade: 5
+LastCombatControls:
+  GM Fluppix:
+    fightMode: 2
+    inventoryMinimize: false
+    chaseMode: 0
+    safeFight: true
+  Desew:
+    fightMode: 2
+    inventoryMinimize: false
+    chaseMode: 0
+    safeFight: true
+  Adric:
+    fightMode: 2
+    inventoryMinimize: false
+    chaseMode: 0
+    safeFight: true
+MiniWindows:
+  playerBarsWindow:
+    closed: false
+  vipWindow:
+    height: 417
+    closed: true
+  unjustifiedPointsWindow:
+    closed: true
+  battleWindow:
+    closed: true
+  minimapWindow:
+    closed: false
+  cooldownWindow:
+    closed: true
+  skillWindow:
+    height: 357
+    closed: true
+game_interface:
+  splitterMarginBottom: 178
+game_console:
+  messageHistory:
+    4: !house
+    10: asdf
+    5: /owner
+    22: as
+    32: dhdg
+    11: asd
+    12: fa
+    7: !premmy
+    33: dghd
+    13: sdf
+    14: asd
+    34: gh
+    9: asd
+    6: !frags
+    16: d
+    35: dg
+    25: adfa
+    17: fa
+    36: hd
+    27: dsfg
+    37: h
+    28: sd
+    18: sdf
+    29: gsd
+    19: as
+    21: df
+    8: /promote
+    15: f
+    30: fg
+    23: asdfasdfasdf
+    26: fg
+    3: !uptime
+    1: clear
+    2: /i backpack
+    24: s
+    31: sd
+    20: fas
+IgnorePlayers:
+WhitelistedPlayers:
+ServerList:
+  127.0.0.1:
+    port: 7171
+    protocol: 854
+  nrtn.pl:
+    port: 7171
+    protocol: 854
+  elveraonline.com:
+    port: 7171
+    protocol: 854
+terminal-history:
+  - clear
+terminal-window:
+  poped: false
