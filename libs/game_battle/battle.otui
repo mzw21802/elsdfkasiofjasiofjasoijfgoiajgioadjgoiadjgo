@@ -1,0 +1,82 @@
+BattleIcon < UICheckBox
+  size: 20 20
+  image-color: white
+  image-rect: 0 0 20 20
+
+  $hover !disabled:
+    color: #cccccc
+
+  $!checked:
+    image-clip: 0 0 20 20
+
+  $hover !checked:
+    image-clip: 0 40 20 20
+
+  $checked:
+    image-clip: 0 20 20 20
+
+  $hover checked:
+    image-clip: 0 60 20 20
+
+  $disabled:
+    image-color: #ffffff88
+
+MiniWindow
+  id: battleWindow
+  !text: tr('Battle')
+  color: #8F8F8F
+  height: 166
+  icon: /images/topbuttons/battle
+  @onClose: modules.game_battle.onMiniWindowClose()
+  &save: true
+
+  HorizontalSeparator
+    margin-top: -12
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: miniwindowScrollBar.left
+
+    Panel
+      anchors.top: parent.top
+      anchors.horizontalCenter: parent.horizontalCenter
+      height: 20
+      width: 120
+      layout:
+        type: horizontalBox
+        spacing: 5
+
+    Panel
+      anchors.top: prev.bottom
+      anchors.horizontalCenter: parent.horizontalCenter
+      height: 20
+      width: 128
+      margin-top: 6
+
+  Panel
+    height: 18
+    anchors.top: prev.bottom
+    anchors.left: parent.left
+    anchors.right: miniwindowScrollBar.left
+    margin-top: 5
+
+  MiniWindowContents
+    anchors.top: prev.bottom
+    margin-top: 6
+
+    Panel
+      id: battlePanel
+      anchors.left: parent.left
+      anchors.right: parent.right
+      anchors.top: parent.top
+      margin-top: 5
+      margin-left: 3
+      padding-right: 5
+      layout:
+        type: verticalBox
+        fit-children: true
+
+  MiniBroder
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    margin-bottom: 2
+    margin-left: 2

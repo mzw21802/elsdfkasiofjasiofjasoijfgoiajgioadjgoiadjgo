@@ -1,0 +1,191 @@
+ConsoleLabel < UITextEdit
+  font: verdana-11px-antialised
+  height: 14
+  color: yellow
+  margin-left: 1
+  text-wrap: true
+  text-auto-resize: true
+  selection-background-color: #808080
+  change-cursor-image: false
+  cursor-visible: false
+  editable: false
+  draggable: true
+  focusable: false
+
+ConsolePhantomLabel < UILabel
+  font: verdana-11px-antialised
+  height: 14
+  color: yellow
+  text-wrap: true
+  text-auto-resize: true
+  selection-color: #111416
+  selection-background-color: #999999
+
+ConsoleTabBar < MoveableTabBar
+  height: 28
+
+ConsoleTabBarPanel < MoveableTabBarPanel
+  id: consoleTab
+
+  ScrollablePanel
+    id: consoleBuffer
+    anchors.fill: parent
+    margin-right: 1
+    
+    vertical-scrollbar: consoleScrollBar
+    layout:
+      type: verticalBox
+      align-bottom: true
+    inverted-scroll: true
+    margin-left: 2
+    padding: -1
+
+  VerticalScrollBar
+    id: consoleScrollBar
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    margin-right: -4
+    margin-top: 0
+
+    step: 14
+    pixels-scroll: true
+
+ConsoleTabBarButton < MoveableTabBarButton
+  font: verdana-11px-rounded
+  text-offset: 0 3
+  height: 18
+  padding: 26
+
+Panel
+  id: consolePanel
+  anchors.fill: parent
+  margin-top: 6
+
+  CheckBox
+    id: toggleChat
+    !tooltip: tr('Disable chat mode, allow to walk using ASDW')
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-left: 6
+    margin-top: 1
+    @onCheckChange: toggleChat()
+
+  Button
+    id: prevChannelButton
+    size: 16 16
+    icon: /images/game/console/leftarrow
+    anchors.left: toggleChat.right
+    anchors.top: parent.top
+    margin-left: 3
+    margin-top: -1
+
+  ConsoleTabBar
+    id: consoleTabBar
+    anchors.left: prev.right
+    anchors.top: parent.top
+    anchors.right: next.left
+    margin-left: 5
+    margin-top: -3
+    margin-right: 5
+    moveable: true
+
+  Button
+    id: nextChannelButton
+    size: 16 16
+    icon: /images/game/console/rightarrow
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 5
+    margin-top: -1
+
+  UIButton
+    id: closeChannelButton
+    size: 16 16
+    !tooltip: tr('Close this channel') .. ' (Ctrl+E)'
+    image-source: /images/game/console/closechannel
+    image-clip: 0 0 16 16
+    anchors.right: next.left
+    anchors.top: parent.top
+    enabled: false
+    margin-right: 0
+    margin-top: -1
+    @onClick: removeCurrentTab()
+
+    $pressed:
+      image-clip: 0 16 16 16
+
+  UIButton
+    id: channelsButton
+    size: 16 16
+    !tooltip: tr('Open new channel') .. ' (Ctrl+O)'
+    anchors.right: next.left
+    anchors.top: parent.top
+    margin-right: 0
+    margin-top: -1
+    image-source: /images/game/console/channels
+    image-clip: 0 0 16 16
+    @onClick: g_game.requestChannels()
+
+    $pressed:
+      image-clip: 0 16 16 16
+
+
+  UIButton
+    id: ignoreButton
+    size: 16 16
+    !tooltip: tr('Ignore players')
+    anchors.right: parent.right
+    anchors.top: parent.top
+    margin-right: 1
+    margin-top: -1
+    image-source: /images/game/console/ignore
+    image-clip: 0 0 16 16
+    @onClick: onClickIgnoreButton()
+
+    $pressed:
+      image-clip: 0 16 16 16
+
+  Panel
+    id: consoleContentPanel
+    anchors.top: prev.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: consoleTextEdit.top
+    margin-left: 7
+    margin-right: 6
+    margin-bottom: 4
+    margin-top: 7
+    padding: 1
+    focusable: false
+
+  TabButton
+    id: sayModeButton
+    icon: /images/game/console/say
+    !tooltip: tr('Adjust volume')
+    &sayMode: 2
+    size: 18 18
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+    margin-left: 8
+    margin-bottom: 4
+    @onClick: sayModeChange()
+
+  HorizontalSeparator
+    id: separator
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: 3
+    margin-left: 7
+
+  TextEdit
+    id: consoleTextEdit
+    anchors.left: sayModeButton.right
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-right: 6
+    margin-left: 6
+    margin-bottom: 3
+    shift-navigation: true
+    max-length: 255
